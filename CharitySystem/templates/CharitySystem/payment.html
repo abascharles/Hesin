@@ -1,0 +1,26 @@
+{% extends "CharitySystem/head-foot-page.html" %}
+{% load static %}
+{% block content %}
+
+<div class="h1 text-center mt-5" style="color:#3c096c;">Enter Card Details</div>
+  <div class="container mb-5">
+    <form action="/charge/" method="post" id="payment-form" class="form-group">
+      {% csrf_token %}
+          <input type="text" name="cus_name" placeholder="Full Name" class="form-control mt-2">
+          <input type="text" name="amount" placeholder="Amount" class="form-control  mt-2">
+          <textarea name="message" rows="5" placeholder="Donation Message" class="form-control mt-2"></textarea>
+          <input type="email" name="mail" placeholder="E-mail" class="form-control mt-2">
+        <div class="form-row">
+          
+          <div id="card-element" class="payment mt-2">
+            <!-- A Stripe Element will be inserted here. -->
+          </div>
+      
+          <!-- Used to display form errors. -->
+          <div id="card-errors" role="alert"></div>
+        </div>
+        <br>
+        <button class="btn btn-outline-payment">Submit Payment</button>
+    </form>
+</div>
+{% endblock %}

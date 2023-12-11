@@ -1,0 +1,20 @@
+{% extends "CharitySystem/head-foot-page.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_filters %}
+{% block content %}
+{% load crispy_forms_tags %}
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+<h2 class="text-center mt-4 text-success">CLUB</h2>
+
+<div class="container pt-5 pb-5">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" hidden value="" name="club_user">
+        {{form|crispy}}
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+    </form>
+</div>
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+{% endblock %}

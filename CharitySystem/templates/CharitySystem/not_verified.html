@@ -1,0 +1,20 @@
+{% extends 'CharitySystem/head-foot-page.html' %}
+{% block content %}
+
+    {% if user.is_authenticated %}
+        <div class="container mt-5 mb-5 pt-2 pb-2" style="height: 400px; background-color:#deffb4;">
+            <div class="row">
+                <div class="col text-center pt-5">
+                    <i class="fas fa-exclamation fa-10x"></i>
+                </div>
+                <div class="col text-center">
+                    <span class="h2 font-weight-bold">Alert !</span><br><br>
+                    <span class="h4">club Not Verified</span><br><br>
+                    <span class="h5">To avail services <i class="far fa-hand-point-down"></i></span><br><br>
+                    <button class="btn btn-outline-info p-3" onclick="location.href='/get_verified/'">Get Verified</button>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

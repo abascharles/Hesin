@@ -1,0 +1,48 @@
+{% extends "CharitySystem/head-foot-page.html" %}
+{% load static %}
+{% block content %}
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+<div class="p-5 mt-4" style="background-color:#e6fff2;">
+    <div class="container p-4">
+        <button class="btn btn-outline-info mb-4" onclick="location.href='/'"><i class="fas fa-angle-left"></i> Home</button>
+        <h3 class="mb-2">About Us</h3>
+        <p class="text-justify mt-4">We are Here To Take Your hand so that you can reach out the people that need out the most.</p>
+    </div>
+</div>
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+<div class="container-fluid pb-5" style="background-color: cornslik;">
+    <div class="text-center p-5">
+        <h3>Supporting Areas Through Donations</h3>
+    </div>        
+    <div class="row mt-2">
+        <div class="col font-italic font-weight-bold">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">School Fees</li>
+                <li class="list-group-item">Food</li>
+                <li class="list-group-item">Rent</li>
+                <li class="list-group-item">Medical Bills</li>
+                <li class="list-group-item">Child Support</li>
+            </ul>
+        </div>
+        <div class="col">
+            <img src="{% static 'img/donate.jpg' %}" style="width:100%; height:250px;">
+        </div>
+        <div class="col font-italic font-weight-bold">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Textbooks and Educational Materials</li>
+                <li class="list-group-item">Technology and Gadgets</li>
+                <li class="list-group-item">Transportation Expenses</li>
+                <li class="list-group-item">Clothing Items</li>
+                <li class="list-group-item">Utilities</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+{% endblock %}

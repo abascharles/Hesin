@@ -1,0 +1,45 @@
+{% extends 'CharitySystem/head-foot-page.html' %}
+{% block content %}
+
+<table class="table mt-5 mb-5">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Domain</th>
+            <th>Club's Head</th>
+            <th>Contact_No. ( +254 )</th>
+            <th>Email</th>
+            <th>Registration Certificate</th>
+            <th>Compliance Certificate</th>
+            <th>Beneficiary Profile</th>
+            <th>Verified (Y/N ) ?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for val in ngo %}
+            <td>{{ val.ngo_name }}</td>
+            <td>{{ val.domain }}</td>
+            <td>{{ val.head_of_ngo }}</td>
+            <td> <a class="text-decoration-none text-body"> {{ val.contactNo }} </a></td>
+            <td>{{ val.email }}</td>
+            <td><a href="{{ val.registration_cerificate_Trust_Society.url }}" class="btn btn-outline-info" target="blank">Certificate</a></td>
+            <td><a href="{{ val.certificate_12A.url }}" class="btn btn-outline-info" target="blank">Certificate</a></td>
+            <td><a href="{{ val.beneficiary_profiles.url }}" class="btn btn-outline-info" target="blank">Certificate</a></td>
+            <td>
+                {% if val.verification_status is None %}
+                    <a href="{% url 'verified_as_true' pk=val.pk %}" class="mr-2 ml-2"><button class="btn btn-outline-success"><i class="fas fa-check-square"></i></button></a>
+                    <a href="{% url 'verified_as_false' pk=val.pk %}"><button class="btn btn-outline-danger"><i class="fas fa-times-circle"></i></button></a>
+                {% elif val.verification_status is True %}
+                    <button class="btn btn-outline-success"><i class="fas fa-check-square"></i></button>
+                {% elif val.verification_status is False %}
+                    <button class="btn btn-outline-danger"><i class="fas fa-times-circle"></i></button>
+                {% endif %}
+            {% endfor %}
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

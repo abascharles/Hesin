@@ -1,0 +1,63 @@
+{% extends "CharitySystem/head-foot-page.html" %}
+{% load static %}
+{% block content %}
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+<div class="mt-5 mb-1">
+    <img src="{% static 'img/background.jpg' %}" width="100%" alt="charity">
+</div>
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+<div class="trend">
+    <div class="container">
+        <h3 class="pt-3"> </h3>
+        <h2>Fundraising For Students in Need</h2>
+
+        <div class="row">
+            <div class="col-4 ">
+                <img src="{% static 'img/needforhelp.jpg' %}" alt="Needy Children" width="100%" style="margin-top:15px;">
+            </div>
+            <div class="col-8  text-justify pt-3">
+                <p>
+                    In the midst of ongoing economic challenges, a multitude
+                    of college students are grappling with hardships concerning
+                    their fundamental needs, such as access to food and the means
+                    to cover fees. Unfortunately, a significant number of these
+                    students find themselves without a platform to express their
+                    concerns and seek assistance, leading to an alarming increase
+                    in school dropouts. This not only magnifies the impact on individuals
+                    but also has broader consequences for communities and nations as a whole.
+                </p>
+            </div>
+        </div>
+    </div>
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="container mt-3 pb-3 ">
+        <div class="row">
+            <div class="col-8 pt-3">
+                <p class="text-justify">Fortunately, we each possess the capacity to enact positive
+                    change. Here, we are empowering individuals, organizations, and communities to
+                    rise to the occasion amid the challenges posed by economic hardships and academic
+                    obstacles. By extending a helping hand, we aim to make a meaningful difference in
+                    the lives of those college students who are most in need.
+                </p>
+                <p class="text-justify">Contribute to a nobel cause as it will be
+                    a very good deed by you - raising a hand for the people who are
+                    in need.
+                </p>
+                <button class="btn btn-outline-primary btn-lg" onclick="location.href='/payment/'">Donate</button>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'img/helpingtheneedy.jpg' %}" alt="Helping the needy children" width="100%" style="margin-top:15px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+
+{% endblock %}

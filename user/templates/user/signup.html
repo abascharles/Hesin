@@ -1,0 +1,25 @@
+{% extends "CharitySystem/head-foot-page.html" %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<center class="pt-3 pb-3">
+    <div class="content-section" style="color: #5603ad; width:50%; margin-top:10px; margin-bottom:10px;">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4" >Register Today !!</legend>
+                {{ new_form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="/login/">Sign In</a>
+            </small>
+        </div>
+    </div>
+</center>
+
+{% endblock %}

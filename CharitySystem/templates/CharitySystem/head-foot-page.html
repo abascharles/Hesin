@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hesin</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link type="text/css" href="{% static 'img' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'font-aws/all.css'%}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/payment.css'%}">
+    <link type="text/css" rel="stylesheet" href="{% static 'img' %}">
+</head>
+<body>
+    <!-- HEADER -->
+ <!-- ----------------------------------------------------------------------------------------------------------------------------    -->
+<div class="container-fluid shadow p-3">
+    <div class="row">
+        <div class="col-4 text-center">
+            <a href="/"><img src="{% static 'img/icon.png' %}" alt="icon"></a>
+        </div>
+        <div class="col-8 titles text-center">
+            <span class="pr-4 border-right border-primary"><i class="fas fa-search"></i> Search</span>
+            <span class="pl-4 border-right border-primary pr-4">
+                <div class="dropdown">
+                    Discover
+                    <div class="dropdown-content">
+                        <a href="/self/">About us</a>
+                        <a href="/fund_request/">Fund Request</a>
+                        <a href="/post_request/">Requests</a>
+                        <a href="/get_verified/">Club Verification</a>
+                    </div>
+              </div>
+            </span>
+            <span class="pl-4 border-right border-primary pr-4">How it Works</span>
+            {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                    <span class="pl-4 border-right border-primary pr-4"><a href="/admin_verify/" class="text-decoration-none text-body">Admin</a></span>
+                {% else %}
+                <span class="pl-4 border-right border-primary pr-4">
+                    <div class="dropdown">
+                        NGO
+                        <div class="dropdown-content">
+                            <a href="/fund_request/">Fund Request</a>
+                            <a href="/post_request/">Requests</a>
+                            <a href="/get_verified/">Club Verification</a>
+                        </div>
+                  </div>
+                </span>
+                {% endif %}
+            {% endif %}
+            {% if user.is_authenticated %}
+                <span class="pl-4"><button class="btn btn-outline-info" onclick="location.href='/logout/'">Sign Out</button></span>
+            {% else %}
+                <span class="pl-4"><a href='/login/'>Sign in</a></span>
+                <span class="pl-4"><button class="btn btn-outline-primary" onclick="location.href='/signup/'"><i class="fas fa-user-plus"></i></button></span>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+    
+    <!-- BLOCK content -->
+    {% block content %}
+    {% endblock %}
+    
+
+    <!-- FOOTER -->
+<!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+    <div class="pt-5 pb-5 container-fluid" style="background-color: whitesmoke;">
+        <div class="container">
+            <div class="d-inline mr-2">
+                <span style="font-size:12pt; color:blue;">Follow Us</span> 
+                <span class="follow">
+                    <button class="btn btn-outline-fb"><i class="fab fa-facebook-square fa-2x"></i></button>
+                    <button class="btn btn-outline-insta"><i class="fab fa-instagram-square fa-2x"></i></button>
+                    <button class="btn btn-outline-primary border-0"><i class="fab fa-twitter-square fa-2x"></i></button>
+                </span>
+            </div>
+            <div class="d-inline float-right">
+                <span class="mr-4">&#169; Hesin 2023</span>
+                <span class="mr-4">Terms and Conditions</span>
+                <span class="mr-4">Privacy</span>
+                <span>Legal</span>
+            </div>
+        </div>
+    </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+</body>
+<script src="{% static 'font-aws/all.js'%}"></script>
+<script src="{% static 'js/slides.js'%}"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="{% static 'js/payment.js'%}"></script>
+</html>
