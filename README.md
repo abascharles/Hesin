@@ -1,0 +1,1 @@
+Django charity web appliacation
